@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class IdeaController extends Controller
 {
+    public function show(Idea $idea){
+        return view('ideas.show', [
+            'idea' => $idea
+        ]);
+    }
     public function store(){
 
         request()->validate([
@@ -21,9 +26,10 @@ class IdeaController extends Controller
         return redirect()->route('dashboard')->with('success','Idea created successfully!');
     }
 
-    public function destroy($id){
+    public function destroy(Idea $idea){
         //where id = 1
-        Idea::where('id', $id)->firstOrFail()->delete();
+        // Idea::where('id', $id)->firstOrFail()->delete();
+        $idea->delete();
 
         return redirect()->route('dashboard')->with('success','Idea deleted successfully!');
     }
