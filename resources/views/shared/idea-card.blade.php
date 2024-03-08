@@ -51,5 +51,6 @@
                     {{ $idea->created_at }} </span>
             </div>
         </div>
+        @include('shared.comments-box')
     </div>
 </div>
