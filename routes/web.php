@@ -32,6 +32,11 @@ Route::put('/ideas/{idea}', [IdeaController::class, 'update'])->name('ideas.upda
 
 Route::delete('/ideas/{id}', [IdeaController::class, 'destroy'])->name('ideas.destroy');
 
+// model
+// controller
+// migration
+// setup the routes
+
 Route::get('/terms', function(){
     return view('terms');
 });
